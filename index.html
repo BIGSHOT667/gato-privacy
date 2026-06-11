@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gato — Politique de Confidentialité</title>
+<style>
+  :root { --bg: #0a0e1a; --card: #111827; --border: #1e2d4a; --text: #e5e7eb; --muted: #9ca3af; --accent: #ec4899; --purple: #a855f7; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a1530 0%, #0f0e28 100%); border-bottom: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+  .bot-icon { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #a855f7); display: inline-flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 16px; border: 3px solid #ec4899; }
+  h1 { font-size: 2rem; font-weight: 900; margin-bottom: 6px; background: linear-gradient(90deg, #ec4899, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; }
+  .container { max-width: 820px; margin: 0 auto; padding: 40px 24px 60px; }
+  .updated { background: #1a2035; border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; margin-bottom: 32px; color: var(--muted); font-size: 0.875rem; }
+  .updated span { color: var(--accent); font-weight: 700; }
+  .alert { background: #2d1219; border: 1px solid #7f1d1d; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  .alert strong { color: #fca5a5; }
+  .alert p { color: #fca5a5; font-size: 0.9rem; line-height: 1.6; }
+  section { margin-bottom: 36px; }
+  h2 { font-size: 1.2rem; font-weight: 800; color: #f0abfc; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  p, li { color: #d1d5db; line-height: 1.75; font-size: 0.95rem; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .table th { background: #1a1535; color: #f0abfc; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  .table td { padding: 12px 14px; border-bottom: 1px solid #1a1535; font-size: 0.9rem; color: #d1d5db; vertical-align: top; }
+  .table tr:last-child td { border-bottom: none; }
+  .sensitive { color: #fca5a5; font-size: 0.75rem; font-weight: 800; background: #450a0a; padding: 2px 8px; border-radius: 999px; }
+  .normal { color: #6ee7b7; font-size: 0.75rem; font-weight: 800; background: #064e3b; padding: 2px 8px; border-radius: 999px; }
+  .notice { background: #1e1a2e; border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-top: 14px; }
+  footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+  a { color: #f0abfc; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bot-icon">🎫</div>
+  <h1>Gato</h1>
+  <div class="subtitle">Bot Discord de tickets — Politique de Confidentialité</div>
+</header>
+<div class="container">
+  <div class="updated">Dernière mise à jour : <span>Juin 2025</span> — Ce document concerne le bot Discord <strong>Gato</strong>.</div>
+
+  <div class="alert">
+    <p><strong>⚠️ Information importante :</strong> Contrairement à certains bots, Gato stocke le <strong>contenu textuel des messages</strong> échangés dans les tickets de support, ainsi que les tags et avatars Discord des participants. Ces données sont nécessaires au fonctionnement du système de transcription des tickets.</p>
+  </div>
+
+  <section>
+    <h2>📋 Résumé</h2>
+    <p>Gato est un bot Discord de gestion de tickets de support (staff, abus, signalement). Il stocke les conversations des tickets dans une base de données SQLite afin de générer des transcriptions et permettre un suivi administratif. Cette politique explique précisément quelles données sont collectées et vos droits.</p>
+  </section>
+
+  <section>
+    <h2>📦 Données collectées</h2>
+    <table class="table">
+      <thead><tr><th>Donnée</th><th>Description</th><th>Sensibilité</th><th>Finalité</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Discord User ID</td>
+          <td>Identifiant numérique unique Discord</td>
+          <td><span class="normal">Faible</span></td>
+          <td>Identifier l'auteur et les participants du ticket</td>
+        </tr>
+        <tr>
+          <td>Tag Discord</td>
+          <td>Nom d'utilisateur Discord (ex: pseudo#0000 ou pseudo)</td>
+          <td><span class="sensitive">Moyenne</span></td>
+          <td>Affichage dans les transcriptions de tickets</td>
+        </tr>
+        <tr>
+          <td>URL d'avatar Discord</td>
+          <td>Lien vers la photo de profil Discord</td>
+          <td><span class="sensitive">Moyenne</span></td>
+          <td>Affichage visuel dans les transcriptions HTML</td>
+        </tr>
+        <tr>
+          <td><strong>Contenu des messages</strong></td>
+          <td>Texte intégral des messages envoyés dans les salons de tickets</td>
+          <td><span class="sensitive">⚠️ Haute</span></td>
+          <td>Génération de transcriptions pour le staff du serveur</td>
+        </tr>
+        <tr>
+          <td>Raison du ticket</td>
+          <td>Texte saisi lors de l'ouverture du ticket</td>
+          <td><span class="sensitive">Moyenne</span></td>
+          <td>Classification et suivi des demandes</td>
+        </tr>
+        <tr>
+          <td>Type de ticket</td>
+          <td>Catégorie : staff, abus ou signalement</td>
+          <td><span class="normal">Faible</span></td>
+          <td>Routage vers les équipes compétentes</td>
+        </tr>
+        <tr>
+          <td>Qui a ouvert / fermé / claim</td>
+          <td>Discord User IDs des intervenants</td>
+          <td><span class="normal">Faible</span></td>
+          <td>Traçabilité et audit</td>
+        </tr>
+        <tr>
+          <td>Timestamps</td>
+          <td>Dates d'ouverture et de fermeture du ticket</td>
+          <td><span class="normal">Faible</span></td>
+          <td>Historique et statistiques</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="notice">✅ Gato <strong>ne collecte pas</strong> : emails, adresses IP, numéros de téléphone, données bancaires, ni aucune information hors du contexte Discord.</div>
+  </section>
+
+  <section>
+    <h2>🎯 Finalité des données</h2>
+    <p>Les données collectées par Gato sont utilisées exclusivement pour :</p>
+    <ul>
+      <li>Créer et gérer les salons de tickets sur le serveur Discord</li>
+      <li>Générer des transcriptions HTML des conversations de tickets</li>
+      <li>Permettre au staff du serveur de suivre et auditer les demandes</li>
+      <li>Identifier les abus et protéger les membres du serveur</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🕐 Durée de conservation</h2>
+    <p>Les transcriptions de tickets (y compris les messages) sont conservées en base de données tant que le bot est actif sur le serveur. L'administrateur du serveur peut décider de purger les données à tout moment. Il n'existe pas de suppression automatique.</p>
+  </section>
+
+  <section>
+    <h2>🗑️ Droit à la suppression</h2>
+    <p>Vous pouvez demander la suppression de vos données (messages, tags, avatars) en contactant directement l'administrateur du serveur Discord sur lequel vous avez utilisé Gato. L'administrateur a accès à la base de données et peut supprimer les entrées vous concernant.</p>
+    <div class="notice">Conformément au RGPD (pour les résidents européens), vous disposez d'un droit d'accès, de rectification et d'effacement de vos données personnelles.</div>
+  </section>
+
+  <section>
+    <h2>🔒 Partage des données</h2>
+    <p>Les données collectées par Gato ne sont <strong>jamais partagées, vendues ou transmises à des tiers</strong>. Les transcriptions sont accessibles uniquement aux membres du staff du serveur Discord concerné disposant des permissions appropriées.</p>
+  </section>
+
+  <section>
+    <h2>👶 Mineurs</h2>
+    <p>Gato est destiné aux serveurs Discord respectant les <a href="https://discord.com/terms">Conditions d'utilisation de Discord</a> (13 ans minimum). Si vous avez connaissance de données appartenant à un mineur, veuillez contacter l'administrateur du serveur.</p>
+  </section>
+
+  <section>
+    <h2>📬 Contact</h2>
+    <p>Pour toute question relative à vos données, contactez l'administrateur de votre serveur Discord ou le propriétaire du bot Gato via le serveur de support.</p>
+  </section>
+</div>
+<footer>© 2025 Gato Bot — Politique de Confidentialité</footer>
+</body>
+</html>
